@@ -1,0 +1,2 @@
+rootProject.name='RecycleV'
+include ':app'
