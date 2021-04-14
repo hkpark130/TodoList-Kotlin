@@ -3,11 +3,22 @@ package com.example.recyclev
 import android.os.Parcel
 import android.os.Parcelable
 
-class TodoList(var contents: String?) : Parcelable {
-    constructor(parcel: Parcel) : this(parcel.readString()) {
+class TodoList() : Parcelable {
+    var subject: String? = ""
+    var contents: String? = ""
+
+    constructor(parcel: Parcel) : this() {
+        subject = parcel.readString()
+        contents = parcel.readString()
+    }
+
+    constructor(subject: String?, contents: String?) : this() {
+        this.subject = subject
+        this.contents = contents
     }
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
+        parcel.writeString(subject)
         parcel.writeString(contents)
     }
 

@@ -34,7 +34,7 @@ class TodoAdapter(val todoList: ArrayList<TodoList>) : RecyclerView.Adapter<Todo
 
     override fun onBindViewHolder(holder: TodoAdapter.CustomViewHolder, position: Int) {
         //뷰홀더를 바인드, (이 함수가 계속 실행됨)
-        holder.content.setText(todoList.get(position).contents)
+        holder.content.setText(todoList.get(position).subject)
 
         holder.itemView.setOnClickListener {
             val intent = Intent(holder.content.context, SubActivity::class.java)

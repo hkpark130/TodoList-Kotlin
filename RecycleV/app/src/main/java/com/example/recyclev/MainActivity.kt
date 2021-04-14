@@ -11,7 +11,6 @@ import kotlinx.android.synthetic.main.activity_main.*
 import com.example.recyclev.TodoList as TodoList
 
 class MainActivity : AppCompatActivity() {
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -43,7 +42,7 @@ class MainActivity : AppCompatActivity() {
 
         if (todoList == null) {
             todoList = arrayListOf<TodoList>(
-                TodoList("there is no data")
+                TodoList("there is no data","")
             )
         }
         return todoList
