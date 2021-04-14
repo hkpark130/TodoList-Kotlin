@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                   xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                   xmlns:tools="http://schemas.android.com/tools"
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="match_parent"
+                                                   android:clickable="true"
+                                                   android:focusableInTouchMode="true">
+
+    <EditText
+            android:layout_width="285dp"
+            android:layout_height="50dp"
+            android:inputType="textPersonName"
+            android:hint="할 일"
+            android:text=""
+            android:ems="10"
+            android:id="@+id/edit_text"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginTop="8dp"/>
+    <Button
+            android:text="save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/btn_save"
+            app:layout_constraintTop_toBottomOf="@+id/et_detail" app:layout_constraintEnd_toStartOf="@+id/btn_cancel"
+            android:layout_marginEnd="42dp" android:layout_marginRight="42dp" android:layout_marginLeft="42dp"
+            android:layout_marginStart="42dp" app:layout_constraintStart_toEndOf="@+id/btn_delete"/>
+    <Button
+            android:text="delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/btn_delete"
+            app:layout_constraintEnd_toStartOf="@+id/btn_save"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@+id/et_detail"
+            android:layout_marginLeft="32dp" android:layout_marginStart="32dp"
+            app:layout_constraintHorizontal_bias="0.0"/>
+    <Button
+            android:text="cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/btn_cancel"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toBottomOf="@+id/et_detail"
+            android:layout_marginEnd="32dp" android:layout_marginRight="32dp"/>
+    <EditText
+            android:id="@+id/et_detail"
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:inputType="text|textMultiLine"
+            android:scrollbars="vertical|horizontal"
+            android:background="@drawable/border"
+            android:gravity="top"
+            app:layout_constraintTop_toBottomOf="@id/edit_text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginLeft="12dp" android:layout_marginStart="12dp"
+            android:layout_marginRight="8dp" android:layout_marginEnd="8dp" app:layout_constraintHorizontal_bias="0.0">
+    </EditText>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
