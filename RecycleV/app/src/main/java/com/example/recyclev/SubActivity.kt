@@ -1,13 +1,11 @@
 package com.example.recyclev
 
 import android.app.Activity
+import android.app.AlertDialog
 import android.content.Intent
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
 import android.view.View
 import android.view.View.OnFocusChangeListener
-import android.view.WindowManager
 import android.view.inputmethod.InputMethodManager
 import androidx.appcompat.app.AppCompatActivity
 import com.google.gson.Gson
@@ -71,10 +69,16 @@ class SubActivity : AppCompatActivity() {
         }
 
         btn_delete.setOnClickListener {
-            if (todoList != null && mode == "edit") {
-                todoList.removeAt(position)
-                saveData(todoList)
-            }
+            AlertDialog.Builder(this)
+                .setTitle("삭제 확인창")
+                .setMessage("삭제하시겠습니까?")
+                .setPositiveButton("예"){dialog, which ->
+                    if (todoList != null && mode == "edit") {
+                        todoList.removeAt(position)
+                        saveData(todoList)
+                    }
+                }.setNegativeButton("아니요"){dialog,which ->
+                }.create().show()
         }
 
         btn_cancel.setOnClickListener {
